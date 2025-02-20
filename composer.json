@@ -1,0 +1,59 @@
+{
+    "name": "tooinfinity/package-skeleton-php",
+    "description": "A skeleton repository for my packages",
+    "keywords": ["php", "skeleton", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TouwfiQ Meghlaoui",
+            "email": "touwfiqdev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.21.0",
+        "peckphp/peck": "^0.1.2",
+        "pestphp/pest": "^3.7.4",
+        "pestphp/pest-plugin-type-coverage": "^3.3",
+        "phpstan/phpstan": "^1.12.19",
+        "rector/rector": "^1.2.10",
+        "symfony/var-dumper": "^7.2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "TooInfinity\\PackageSkeletonPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "rector": "rector",
+        "lint": "pint",
+        "test:rector": "rector --dry-run",
+        "test:lint": "pint --test",
+        "test:typos": "peck",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:rector",
+            "@test:lint",
+            "@test:typos",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
