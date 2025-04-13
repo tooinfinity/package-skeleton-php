@@ -1,25 +1,27 @@
-risky: false
+php:
 
-version: 8.4
+  risky: false
 
-presets: recommended
+  version: 8.4
 
-finder:
-  exclude:
-    - "tests"
-    - "docs"
-    - "log"
-  name: "*.php"
-  not-name:
-    - "*Stub.php"
-    - "*.blade.php"
-  contains:
-    - "Foo"
-  not-contains:
-    - "config"
-  path:
-    - "foo/Stuff"
-  not-path:
-    - "libraries"
-  depth:
-    - "< 2"
+  presets: recommended
+
+  finder:
+    exclude:
+      - "tests"
+      - "docs"
+      - "log"
+    name: "*.php"
+    not-name:
+      - "*Stub.php"
+      - "*.blade.php"
+    contains:
+      - "Foo"
+    not-contains:
+      - "config"
+    path:
+      - "foo/Stuff"
+    not-path:
+      - "libraries"
+    depth:
+      - "< 2"
